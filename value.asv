@@ -1,0 +1,18 @@
+function gridValue = value(gridValues_old, state)
+
+actions = possibleActions(state);
+reward = -1;
+gamma = 1;
+
+if isempty(actions)
+    temp_gridValue = gridValues_old(state);
+else
+    numActions = size(actions,1);
+    prob = 1/numActions;            % All actions have the same probability
+    for i=1:numActions
+        action = actions(i);
+        ns = nextState(state, action);
+        temp_gridValue = tempgridValue ...
+            + prob*(reward + gamma*gridValues_old(ns));
+    end
+end
