@@ -39,7 +39,7 @@ classdef gridWorld
             obj.Actions = cell(gridRow,gridCol);
             for i=1:gridRow
                 for j=1:gridCol
-                    obj.Actions(i,j) = {possibleActions([i,j])};
+                    obj.Actions(i,j) = {initActions([i,j])};
                 end
             end
         end

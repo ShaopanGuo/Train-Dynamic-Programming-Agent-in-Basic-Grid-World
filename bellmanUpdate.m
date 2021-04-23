@@ -1,11 +1,11 @@
-function gridValue = bellmanUpdate(gridValues_old, state)
+function gridValue = bellmanUpdate(env, state)
 
-actions = possibleActions(state);
+actions = env.Actions{state(1),state(2)};
 reward = -1;
 gamma = 1;
 
 if isempty(actions)
-    gridValue = gridValues_old(state(1),state(2));
+    gridValue = env.Values(state(1),state(2));
 else
     gridValue = 0;
     numActions = size(actions,2);
@@ -14,6 +14,6 @@ else
         action = actions(i);
         ns = nextState(state, action);
         gridValue = gridValue ...
-            + prob*(reward + gamma*gridValues_old(ns(1),ns(2)));
+            + prob*(reward + gamma*env.Values(ns(1),ns(2)));
     end
 end

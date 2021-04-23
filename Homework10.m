@@ -55,4 +55,6 @@ theta = 0.0001;
 gridWorld = evaluatePolicy(gridWorld, theta);
 
 %% Step 2: Policy Iteration
+gamma = 1;
+[gridWorld,pi] = policyIteration(gridWorld,gamma,theta)
 
