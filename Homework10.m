@@ -52,7 +52,7 @@ gridWorld = gridWorld(gridRow,gridCol,reward,...
 
 
 theta = 0.0001;
-gridWorld = evaluatePolicy(gridWorld, theta);
+% gridWorld = evaluatePolicy(gridWorld, theta);
 
 %% Step 2: Policy Iteration
 gamma = 1;
