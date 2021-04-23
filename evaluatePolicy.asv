@@ -1,0 +1,11 @@
+function V = evaluatePolicy(env, V, pi, gamma, theta)
+    delta = -inf;
+    while delta > theta
+        delta = 0;
+        for i=1:env.gridRow
+            for j=1:env.gridCol
+                v = env.Values(i,j);
+            end
+        end
+    end
+end

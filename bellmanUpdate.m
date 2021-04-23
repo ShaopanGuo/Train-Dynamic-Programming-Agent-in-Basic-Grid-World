@@ -1,4 +1,4 @@
-function gridValue = value(gridValues_old, state)
+function gridValue = bellmanUpdate(gridValues_old, state)
 
 actions = possibleActions(state);
 reward = -1;

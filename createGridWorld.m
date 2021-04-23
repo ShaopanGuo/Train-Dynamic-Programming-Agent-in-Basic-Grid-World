@@ -60,7 +60,7 @@ while delta > theta || delta == theta
         for j=1:gridCols
             state = [i,j];
             v = gridValues(state(1),state(2));
-            gridValues(state(1),state(2)) = value(gridValues_old,state);
+            gridValues(state(1),state(2)) = bellmanUpdate(gridValues_old,state);
             error = abs(v-gridValues(state(1),state(2)));
             delta = max(delta, error);
             gridValues
@@ -78,7 +78,7 @@ toc
 %         for j=1:gridCols
 %             state = [i,j];
 %             v = gridValues(state(1),state(2));
-%             gridValues(state(1),state(2)) = value(gridValues,state);
+%             gridValues(state(1),state(2)) = bellmanUpdate(gridValues,state);
 %             error = abs(v-gridValues(state(1),state(2)));
 %             delta = max(delta, error);
 %             gridValues
